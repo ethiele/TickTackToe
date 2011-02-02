@@ -1,0 +1,12 @@
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\bin\Debug\TickTackToe.exe
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\bin\Debug\TickTackToe.pdb
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\obj\x86\Debug\TickTackToe.exe
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\obj\x86\Debug\TickTackToe.pdb
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\bin\Debug\IronPython.dll
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\bin\Debug\IronPython.Modules.dll
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\bin\Debug\Microsoft.Dynamic.dll
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\bin\Debug\Microsoft.Scripting.Debugging.dll
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\bin\Debug\Microsoft.Scripting.dll
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\bin\Debug\IronPython.xml
+c:\users\ethiele\documents\visual studio 2010\Projects\TickTackToe\TickTackToe\bin\Debug\IronPython.Modules.xml
