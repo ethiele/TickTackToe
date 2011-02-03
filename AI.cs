@@ -22,13 +22,12 @@ namespace TickTackToe
             m_scope.SetVariable("XBox", BoxState.X);
             m_scope.SetVariable("OBox", BoxState.O);
             source = m_engine.CreateScriptSourceFromString(System.IO.File.ReadAllText("AI.py"), SourceCodeKind.AutoDetect);
-
+           
         }
 
         public void MakeMove(GameControl gc)
         {
-            m_scope.SetVariable("game", gc);
-            
+            m_scope.SetVariable("game", gc);          
             source.Execute(m_scope);
         }
     }

@@ -9,12 +9,7 @@ namespace TickTackToe
     {
 
 
-        public int Width
-        {
-            get
-            { return 3; }
-        }
-        public int Height
+        public int GirdSize
         {
             get
             { return 3; }
@@ -29,12 +24,14 @@ namespace TickTackToe
             }
         }
 
-        private BoxState[][] GameGrid = new BoxState[3][];
+        private BoxState[][] GameGrid;
         public Game()
         {
-            for (int i = 0; i < Width; i++)
+            GameGrid = new BoxState[GirdSize][];
+            for (int i = 0; i < GirdSize; i++)
+
             {
-                GameGrid[i] = new BoxState[3];
+                GameGrid[i] = new BoxState[GirdSize];
             }
         }
         public BoxState GetBox(int x, int y)
@@ -64,10 +61,20 @@ namespace TickTackToe
 
             bool xwin = false;
             bool owin = false;
+            // Check vert
             if (GameGrid.Any(p => p.All(q => q == BoxState.X))) xwin = true;
             if (GameGrid.Any(p => p.All(q => q == BoxState.O))) owin  = true;
-            if (Enumerable.Range(0, Width).Any(p => GameGrid.All(q => q[p] == BoxState.X))) xwin = true;
-            if (Enumerable.Range(0, Width).Any(p => GameGrid.All(q => q[p] == BoxState.O))) owin = true;
+            // Check horz
+            if (Enumerable.Range(0, GirdSize).Any(p => GameGrid.All(q => q[p] == BoxState.X))) xwin = true;
+            if (Enumerable.Range(0, GirdSize).Any(p => GameGrid.All(q => q[p] == BoxState.O))) owin = true;
+            
+            // Check diag
+            if (Enumerable.Range(0, GirdSize).All(p => GameGrid[p][p] == BoxState.X)) xwin = true;
+            if (Enumerable.Range(0, GirdSize).All(p => GameGrid[p][p] == BoxState.O)) xwin = true;
+            if (Enumerable.Range(0, GirdSize).All(p => GameGrid[p][GirdSize - p - 1] == BoxState.X)) xwin = true;
+            if (Enumerable.Range(0, GirdSize).All(p => GameGrid[p][GirdSize-p-1] == BoxState.O)) xwin = true;
+
+
             if (xwin) gs = GameState.XWins;
             if (owin) gs = GameState.OWins;
             if (!xwin && !owin)
@@ -80,9 +87,9 @@ namespace TickTackToe
         public string ShowGameState()
         {
             StringBuilder sb = new StringBuilder();
-            for (int y = 0; y < Height; y++)
+            for (int y = 0; y < GirdSize; y++)
             {
-                for (int x = 0; x < Width; x++)
+                for (int x = 0; x < GirdSize; x++)
                 {
                     if (GetBox(x, y) == BoxState.X) sb.Append("X");
                     if (GetBox(x, y) == BoxState.O) sb.Append("O");
@@ -90,7 +97,7 @@ namespace TickTackToe
                     sb.Append("|");
                 }
                 sb.AppendLine();
-                sb.Append('-', Width * 2);
+                sb.Append('-', GirdSize * 2);
                 sb.AppendLine();
             }
             return sb.ToString();
@@ -105,6 +112,14 @@ namespace TickTackToe
         public GameControl(Game game)
         {
             g = game;
+        }
+
+        public int Size
+        {
+            get
+            {
+                return g.GirdSize;
+            }
         }
 
         public void MakeMove(int x, int y)

@@ -24,11 +24,11 @@ namespace TickTackToe
             {
                 ai1.MakeMove(new GameControl(g));
                 Console.Write(g.ShowGameState());
-                Console.ReadLine();
+                //Console.ReadLine();
                 if (g.StateOfGame != GameState.Running) break;
                 ai2.MakeMove(new GameControl(g));
                 Console.Write(g.ShowGameState());
-                Console.ReadLine();
+                //Console.ReadLine();
             }
 
             Console.WriteLine("STATUS: " + g.StateOfGame);
